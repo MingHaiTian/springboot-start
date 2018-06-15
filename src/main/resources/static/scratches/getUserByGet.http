@@ -1,0 +1,6 @@
+GET http://localhost:8080/springboot/getUserByGet?userName=tmh
+Accept: */*
+Cache-Control: no-cache
+
+###
+

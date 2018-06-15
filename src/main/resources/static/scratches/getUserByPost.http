@@ -1,0 +1,12 @@
+POST http://localhost:8080/springboot/getUserByPost?userName=tmh
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"tianminghai","code":"AAAAAAAAAA"}
+
+<> 2018-06-15T095540.200.txt
+<> 2018-06-15T095537.200.txt
+
+###
+
