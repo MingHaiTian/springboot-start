@@ -1,6 +1,8 @@
 package com.example.demo.boot.control;
 
 import com.example.demo.boot.command.SimpleCommand;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/springboot")
 public class UserController {
+
+    private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     //    用户名
     @Value("${username}")
@@ -29,8 +33,7 @@ public class UserController {
      */
     @RequestMapping(value = "/getUserByGet", method = RequestMethod.GET)
     String getUserByGet(@RequestParam(value = "userName") String userName) {
-
-        System.out.println("---------getUserByGet start---------");
+        logger.info("---------getUserByGet start---------");
         return "Hello " + userName;
     }
 
@@ -44,10 +47,9 @@ public class UserController {
      */
     @RequestMapping(value = "/getUserByPost", method = RequestMethod.POST)
     String getUserByPost(@RequestParam(value = "userName") String userName, @RequestBody SimpleCommand data) {
-
-        System.out.println("---------getUserByPost start---------");
-        System.out.println("userName:" + userName + "  " + data.toString());
-        System.out.println("---------getUserByPost end---------");
+        logger.info("---------getUserByPost start---------");
+        logger.info("userName:" + userName + "  " + data.toString());
+        logger.info("---------getUserByPost end---------");
         return "Hello POST " + userName + data;
     }
 
@@ -59,9 +61,9 @@ public class UserController {
      */
     @RequestMapping(value = "/getConfigurationUserByGet", method = RequestMethod.GET)
     String getConfigurationUserByGet() {
-        System.out.println("---------getConfigurationUserByGet start---------");
-        System.out.println("userNameConf:" + userNameConf + "  " + "userCodeConf：" + userCodeConf);
-        System.out.println("---------getConfigurationUserByGet end---------");
+        logger.info("---------getConfigurationUserByGet start---------");
+        logger.info("userNameConf:" + userNameConf + "  " + "userCodeConf：" + userCodeConf);
+        logger.info("---------getConfigurationUserByGet end---------");
         return "Hello Get " + userNameConf + " " + userCodeConf;
     }
 
