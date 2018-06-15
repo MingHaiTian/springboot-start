@@ -1,0 +1,6 @@
+GET http://localhost:8080/serverletpath/springboot/getConfigurationUserByGet
+Accept: */*
+Cache-Control: no-cache
+
+###
+
